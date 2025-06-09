@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Nosso Amor em Tempo Real</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff0f5;
+            color: #333;
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            color: #d6336c;
+            font-size: 2.5em;
+        }
+        #counter {
+            font-size: 2em;
+            margin-top: 20px;
+            color: #444;
+        }
+        img {
+            margin-top: 30px;
+            max-width: 90%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Nosso Amor em Tempo Real</h1>
+    <div id="counter">Carregando...</div>
+    <img src="image1.jpg" alt="Nosso momento juntos">
+    <script>
+        const startDate = new Date("2022-06-11T00:00:00");
+        function updateCounter() {
+            const now = new Date();
+            const diff = Math.floor((now - startDate) / 1000);
+            document.getElementById("counter").innerText = 
+                "Estamos juntos há " + diff.toLocaleString() + " segundos.";
+        }
+        setInterval(updateCounter, 1000);
+        updateCounter();
+    </script>
+</body>
+</html>
